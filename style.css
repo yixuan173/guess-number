@@ -1,0 +1,368 @@
+/*
+
+---- TYPOGRAPHY SYSTEM ----
+
+- FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+---- WHITESPACE ----
+
+- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Caveat", cursive;
+}
+
+*:focus {
+  outline: #233a4c;
+  border: 2px solid #233a4c;
+}
+
+html {
+  /* 1rem = 10px，原預設font-size = 16px，手動跟改為16px * 62.5% = 10px */
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1;
+  font-weight: 400;
+  color: #fff;
+}
+
+.main-container {
+  height: 100vh;
+  background: linear-gradient(180deg, #74c0fc, #c7e6fe);
+  /* background-color: #74c0fc; */
+
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  height: 90vh;
+  margin: 5vh auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.header-one {
+  font-size: 9.8rem;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+
+  animation: bounce-small 1.75s infinite;
+}
+
+.header-two {
+  font-size: 5.2rem;
+  font-weight: 600;
+  margin-bottom: 4.8rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  font-size: 2.4rem;
+  font-weight: 500;
+  padding: 1.6rem 8rem;
+  border: none;
+  background-color: #5186b0;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+
+  transition: all 0.2s;
+}
+
+.btn-start {
+  display: block;
+  margin: 0 auto;
+}
+
+.icon:hover {
+  background-color: #2e4d65;
+  box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.3);
+
+  animation: btn-radius 0.3s forwards;
+}
+
+.icon-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start .icon-text {
+  display: none;
+}
+
+.icon .start-text {
+  display: none;
+}
+
+.start-text {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.btn-icon {
+  height: 30px;
+  width: 30px;
+  stroke: #fff;
+}
+
+.guess-container {
+  max-width: 80%;
+  background-color: #fafafa;
+  color: #333;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.15);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  opacity: 0;
+
+  transition: all 0.4s;
+}
+
+.guess-container-hidden {
+  visibility: hidden;
+  display: none;
+}
+
+.guess--input-area {
+  padding: 4.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.2rem;
+}
+
+.score-container {
+  margin-bottom: 1.6rem;
+  width: 33rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.new-score {
+  font-size: 4.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fcc419;
+
+  animation: scale-sm 2s infinite;
+}
+
+.label-highscore {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+.label-score {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.guess-input {
+  width: 33rem;
+  font-size: 3.6rem;
+  font-weight: 500;
+  padding: 1.2rem 2.4rem;
+  color: #172632;
+  margin-bottom: 1.2rem;
+
+  border: 2px solid #233a4c;
+}
+
+.input-shock {
+  border: 2px solid #fa5252;
+  animation: input-shock 0.4s;
+}
+
+.input-shock:focus {
+  outline: #233a4c;
+  border: 2px solid #fa5252;
+}
+
+.currect-number {
+  font-size: 8rem;
+  font-weight: 700;
+  text-align: center;
+  color: #51cf66;
+}
+
+.btn-guess {
+  font-size: 2.4rem;
+  font-weight: 600;
+  width: 50%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+
+.check {
+  background-color: #5d9aca;
+  transition: all 0.2s;
+}
+
+.check:hover {
+  background-color: #416c8d;
+  box-shadow: 0 0 0.8rem 1.2rem rgba(0, 0, 0, 0.1);
+  transform: scale(0.9);
+}
+
+.again {
+  background-color: #54af63;
+  transition: all 0.2s;
+}
+
+.again:hover {
+  background-color: #3b7a45;
+  box-shadow: 0 0 0.8rem 1.2rem rgba(0, 0, 0, 0.1);
+  transform: scale(0.9);
+}
+
+.guess--history-area {
+  padding: 4.8rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  gap: 3.2rem;
+
+  overflow: auto;
+}
+
+.history-list-area {
+  max-height: 34vh;
+  background-color: #fff;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.history-list-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+
+  gap: 2.4rem;
+}
+
+.history-list {
+  list-style: none;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #777;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+li:first-child {
+  color: #222;
+}
+
+.history-list-items {
+  display: flex;
+  justify-content: space-around;
+}
+
+/************************************************/
+/************* Animation ***********************/
+/************************************************/
+
+@keyframes bounce-small {
+  0%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-0.3rem);
+    text-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.1);
+  }
+
+  40% {
+    transform: translateY(1rem);
+    text-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.4);
+  }
+
+  60% {
+    transform: translateY(0.3rem);
+    text-shadow: 0 1.2rem 1.2rem rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes btn-radius {
+  0% {
+    border-radius: 50px;
+  }
+
+  80% {
+    padding: 1.6rem 0.4rem;
+    border-radius: 40%;
+  }
+
+  90% {
+    padding: 1.6rem 0.8rem;
+    border-radius: 40%;
+  }
+
+  100% {
+    padding: 1.6rem;
+    border-radius: 50%;
+  }
+}
+
+@keyframes input-shock {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20%,
+  60% {
+    transform: translateX(0.6rem);
+  }
+
+  40%,
+  80% {
+    transform: translateX(-0.6rem);
+  }
+}
+
+@keyframes scale-sm {
+  0%,
+  50%,
+  100% {
+    transform: scale(1);
+  }
+
+  25%,
+  75% {
+    transform: scale(1.3);
+  }
+}

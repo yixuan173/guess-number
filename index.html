@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess Number - 1A2B | Enter your guess</title>
+    <meta name="description" content="輕鬆簡單的猜數字遊戲，激發你的大腦。" />
+    <meta name="author" content="yixuan173" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="./brain.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./queries.css" />
+  </head>
+
+  <body>
+    <main class="main-container">
+      <div class="container">
+        <h1 class="header-one text-center">Guess Number</h1>
+        <h2 class="header-two text-center">&mdash; Enter your guess &mdash;</h2>
+        <button class="btn btn-start start">
+          <span class="start-text">START</span>
+          <span class="icon-text">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="btn-icon"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13 5l7 7-7 7M5 5l7 7-7 7"
+              /></svg
+          ></span>
+        </button>
+
+        <section class="guess-container guess-container-hidden">
+          <div class="guess--input-area">
+            <p class="new-score hidden"></p>
+            <div class="score-container">
+              <p class="label-highscore">
+                Highscore: <span class="highscore">0</span>
+              </p>
+              <p class="label-score">Score: <span class="score">100</span></p>
+            </div>
+            <input type="text" class="guess-input" />
+            <span class="currect-number hidden">1324</span>
+            <button class="btn btn-guess check">Check</button>
+            <button class="btn btn-guess again hidden">Again!</button>
+          </div>
+
+          <div class="guess--history-area">
+            <p class="history-list-title">
+              <span class="list-round">Round</span>
+              <span class="list-guess">Guess</span>
+              <span class="list-result">Result</span>
+            </p>
+            <div class="history-list-area">
+              <ul class="history-list"></ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+  <script src="./app.js"></script>
+</html>
